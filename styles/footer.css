@@ -6,7 +6,8 @@
 }
 
 .visit-us-container {
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
+    background-color:#E5E4E2;
     padding: 40px 20px;
 }
 
@@ -53,7 +54,7 @@
 }
 
 .contact-item i {
-    font-size: 20px;
+    font-size: 30px;
     color: #FF6B6B;
     width: 30px;
     text-align: center;
