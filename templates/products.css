@@ -549,3 +549,46 @@ form a{
   }
 
 
+
+
+/* --------------------- show more button -------------------------- */
+
+.show-more-btn {
+    background-color: #FFD580;
+    color: #333;
+    border: 2px solid #FFC04C;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    width: 100%;
+    max-width: 250px;
+    margin: 20px auto;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 
+        0 4px 6px rgba(0,0,0,0.1),
+        0 1px 3px rgba(0,0,0,0.08);
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.show-more-btn:hover {
+    background-color: #FFCA5F;
+    transform: translateY(-3px);
+    box-shadow: 
+        0 6px 8px rgba(0,0,0,0.15),
+        0 2px 4px rgba(0,0,0,0.1);
+}
+
+.show-more-btn:active {
+    transform: scale(0.98);
+    background-color: #FFC04C;
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.1),
+        0 1px 2px rgba(0,0,0,0.06);
+}

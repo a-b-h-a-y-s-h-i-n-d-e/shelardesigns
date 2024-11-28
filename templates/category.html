@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>शेलार designs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="assets/logos/shelardesigns.png" width="125px"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+
+                    </ul>
+                </nav>
+                <!-- cart.html -->
+                <a href=""><img src="assets/logos/cart.png" width="30px" height="30px"></a>
+                <img src="assets/logos/menu.png" class="menu-icon" onClick="menutoggle()">
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h1>फक्त प्रिंट नाही, तुमचं व्यक्तिमत्व सजवतो! </h1>
+                    <p>यश मोठ्या गोष्टींमध्ये नाही, तर छोट्या प्रयत्नांमध्ये आहे.</p>
+                    <a href="templates/products.html" class="btn">Explore Now &#8594;</a>
+                </div>
+                <div class="col-2">
+                    <img src="assets/logos/image1.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!------------------------------ 4 categories------------------------------>
+
+
+
+    <div class="categories">
+        <!-- hex code -> #EADFDE -->
+        <h2 class="title">Our Categories</h2>
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <a href="templates/jerseys.html" class="category-link">
+                        <img src="assets/categories/jerseys.png">
+                        <a href="templates/jerseys.html" class="category-link">Jersey Printing -></a>
+                    </a>
+                </div>
+                <div class="col-3">
+                    <a href="templates/tshirts.html" class="category-link">
+                        <img src="assets/categories/tshirts.png">
+                        <a href="templates/tshirts.html" class="category-link">T-shirts -></a>
+                    </a>
+                </div>
+                <div class="col-3">
+                    <a href="templates/others.html" class="category-link">
+                        <img src="assets/categories/others.png">
+                        <a href="templates/others.html" class="category-link">Gifts and accesories &nbsp;-></a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!----------------------------------footer------------------------------------->
+
+
+ 
+
+    <!-----------------------------------js for toggle menu----------------------------------------------->
+    <script>
+        var menuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</body>
+
+</html>
