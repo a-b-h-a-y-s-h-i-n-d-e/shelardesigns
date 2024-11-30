@@ -9,8 +9,12 @@
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="styles/caraousel.css">
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
     <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -86,7 +90,37 @@
         </div>
     </div>
 
+    <!------------------------------ video carousel ------------------------------>
 
+    <div class="carousel" data-flickity='{"autoPlay" : true, "initialIndex": 1}' >
+        <div class="carousel-cell">
+            <video autoplay loop muted controls>
+                <source src="videos/video1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="carousel-cell">
+            <video autoplay loop muted controls>
+                <source src="videos/video2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="carousel-cell">
+            <video autoplay loop muted controls>
+                <source src="videos/video3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="carousel-cell">
+            <video autoplay loop muted controls>
+                <source src="videos/video4.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="carousel-cell">
+            <video autoplay loop muted controls>
+                <source src="videos/video5.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+
+    </div>
 
     <!------------------------------ featured Products------------------------------>
     <!-- <div class="small-container">
@@ -143,7 +177,7 @@
 
 
 
-        <!-- ------------------------`   offer   -------------------------------
+        <!-- ------------------------  offer  -------------------------------
     <div class="offer">
         <div class="small-container">
             <div class="row">
