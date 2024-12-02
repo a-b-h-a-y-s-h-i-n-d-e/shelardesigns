@@ -19,6 +19,6 @@ function redirectToWhatsApp(button) {
         `Please let me know more details.`
     );
 
-    const whatsappURL = `https://wa.me/918591219224?text=${encodedMessage}`;
+    const whatsappURL = `https://wa.me/918454954438?text=${encodedMessage}`;
     window.open(whatsappURL, '_blank');
 }
