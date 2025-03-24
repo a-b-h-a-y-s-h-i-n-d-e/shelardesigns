@@ -1,0 +1,23 @@
+{
+  "name": "shelardesigns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-b-h-a-y-s-h-i-n-d-e/shelardesigns.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-b-h-a-y-s-h-i-n-d-e/shelardesigns/issues"
+  },
+  "homepage": "https://github.com/a-b-h-a-y-s-h-i-n-d-e/shelardesigns#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
