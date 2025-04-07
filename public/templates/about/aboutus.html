@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey</title>
+    <link rel="stylesheet" href="../../styles/products.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .journey-map {
+            position: relative;
+            margin: 50px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 30px 0;
+        }
+        
+        .path {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, #ffd1dc, #ffb6c1, #ffd1dc);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .milestone {
+            position: relative;
+            margin-bottom: 100px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .milestone:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .milestone-content {
+            width: 45%;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .milestone:nth-child(odd) .milestone-content {
+            margin-right: 5%;
+        }
+        
+        .milestone:nth-child(even) .milestone-content {
+            margin-left: 5%;
+        }
+        
+        .milestone-dot {
+            width: 30px;
+            height: 30px;
+            background-color: #ffb6c1;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            border: 5px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .milestone-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+        }
+        
+        .milestone h3 {
+            color: #ffb6c1;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .milestone p {
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        .milestone-date {
+            font-weight: bold;
+            color: #ffb6c1;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .path {
+                left: 30px;
+            }
+            
+            .milestone {
+                flex-direction: column-reverse !important;
+                margin-left: 30px;
+                margin-bottom: 50px;
+            }
+            
+            .milestone-content {
+                width: calc(100% - 60px);
+                margin-left: 30px !important;
+                margin-right: 0 !important;
+            }
+            
+            .milestone-dot {
+                left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+     <!-- main header -->
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="../../index.html"><img src="../../assets/logos/shelardesigns.png" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../products.html">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    
+
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="../../assets/logos/cart.png" width="30px" height="30px"></a>
+            <img src="../assets/logos/menu.png" class="menu-icon" onClick="menutoggle()">
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="header">
+            <h1>Our Journey</h1>
+            <p>From humble beginnings to where we are today - follow the milestones that shaped our story and made us who we are.</p>
+        </div>
+        
+        <div class="journey-map">
+            <div class="timeline">
+                <div class="path"></div>
+                
+                <!-- Milestone 1 -->
+                <div class="milestone">
+                    <div class="milestone-content">
+                        <div class="milestone-date">January 2019</div>
+                        <h3>The Beginning</h3>
+                        <img src="me1.png" alt="placeholder" class="milestone-img">
+                        <p>It all started with a simple idea and a small workspace. Our founder had a vision to create something meaningful that would help people connect.</p>
+                    </div>
+                    <div class="milestone-dot"></div>
+                </div>
+                
+                <!-- Milestone 2 -->
+                <div class="milestone">
+                    <div class="milestone-content">
+                        <div class="milestone-date">June 2020</div>
+                        <h3>First Major Client</h3>
+                        <img src="me2.png" alt="placeholder" class="milestone-img">
+                        <p>After months of hard work, we landed our first major client. This partnership helped us refine our approach and expand our capabilities.</p>
+                    </div>
+                    <div class="milestone-dot"></div>
+                </div>
+                
+                <!-- Milestone 3 -->
+                <div class="milestone">
+                    <div class="milestone-content">
+                        <div class="milestone-date">March 2021</div>
+                        <h3>Growing the Team</h3>
+                        <img src="me3.png" alt="placeholder" class="milestone-img">
+                        <p>As demand grew, so did our team. We welcomed talented individuals who brought fresh perspectives and expertise to our business.</p>
+                    </div>
+                    <div class="milestone-dot"></div>
+                </div>
+                
+                <!-- Milestone 4 -->
+                <div class="milestone">
+                    <div class="milestone-content">
+                        <div class="milestone-date">November 2022</div>
+                        <h3>New Office Space</h3>
+                        <img src="me4.png" alt="placeholder" class="milestone-img">
+                        <p>We moved into our current headquarters, a space that reflects our values and provides the perfect environment for creativity and collaboration.</p>
+                    </div>
+                    <div class="milestone-dot"></div>
+                </div>
+                
+                <!-- Milestone 5 -->
+                <div class="milestone">
+                    <div class="milestone-content">
+                        <div class="milestone-date">August 2023</div>
+                        <h3>Industry Recognition</h3>
+                        <img src="me5.png" alt="placeholder" class="milestone-img">
+                        <p>Our dedication to excellence was recognized when we received our first industry award, validating our approach and strengthening our reputation.</p>
+                    </div>
+                    <div class="milestone-dot"></div>
+                </div>
+                
+                <!-- Milestone 6 -->
+                <!-- <div class="milestone">
+                    <div class="milestone-content">
+                        <div class="milestone-date">Today</div>
+                        <h3>Looking to the Future</h3>
+                        <img src="/api/placeholder/400/320" alt="placeholder" class="milestone-img">
+                        <p>While we're proud of how far we've come, we're even more excited about what lies ahead. We continue to innovate and grow, always staying true to our core mission.</p>
+                    </div>
+                    <div class="milestone-dot"></div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
