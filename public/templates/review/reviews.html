@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Reviews Section */
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .review-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .reviewer-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid #ffd1dc;
+        }
+        
+        .reviewer-info h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .review-date {
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .review-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffb6c1;
+        }
+        
+        .review-content {
+            line-height: 1.6;
+            color: #666;
+            flex-grow: 1;
+        }
+        
+        /* Add Review Form */
+        .add-review-container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 50px;
+            border: 1px solid #ffd1dc;
+        }
+        
+        .add-review-title {
+            font-size: 1.8rem;
+            color: #ffb6c1;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .review-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ffb6c1;
+            outline: none;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .image-preview {
+            width: 100%;
+            max-height: 200px;
+            margin-top: 10px;
+            display: none;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 1px dashed #ddd;
+        }
+        
+        .submit-btn {
+            background-color: #ffb6c1;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            grid-column: span 2;
+            justify-self: center;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #ff9daa;
+        }
+        
+        @media (max-width: 768px) {
+            .review-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            
+            .submit-btn {
+                grid-column: span 1;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../../styles/products.css">
+</head>
+<body>
+
+    <!--<div class ="header">-->
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="../../index.html"><img src="../../assets/logos/shelardesigns.png" width="125px"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../templates/products.html">Products</a></li>
+                        <li><a href="../../templates/about/aboutus.html">About</a></li>
+                        <li><a href="../../templates/contact/contactus.html">Contact</a></li>
+                    
+    
+                    </ul>
+                </nav>
+                <a href="#"><img src="../../assets/logos/cart.png" width="30px" height="30px"></a>
+                <img src="../../assets/logos/menu.png" class="menu-icon" onClick="menutoggle()">
+            </div>
+    
+        </div>
+
+    <div class="container">
+        <div class="section-title">
+            <h1>Customer Reviews</h1>
+            <p>See what our customers are saying about their experience with us.</p>
+        </div>
+        
+        <!-- Reviews Container -->
+        <div class="reviews-container" id="reviewsContainer">
+            <!-- Sample reviews will be loaded from localStorage or default ones will be shown -->
+        </div>
+        
+        <!-- Add Review Form -->
+        <div class="add-review-container">
+            <h2 class="add-review-title">Share Your Experience</h2>
+            <form class="review-form" id="reviewForm">
+                <div class="form-group">
+                    <label for="reviewerName">Your Name</label>
+                    <input type="text" id="reviewerName" name="reviewerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reviewImage">Your Photo</label>
+                    <input type="file" id="reviewImage" name="reviewImage" accept="image/*" required>
+                    <img id="imagePreview" class="image-preview" alt="Preview">
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="reviewTitle">Review Title</label>
+                    <input type="text" id="reviewTitle" name="reviewTitle" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="reviewContent">Your Experience</label>
+                    <textarea id="reviewContent" name="reviewContent" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+            <img src="/public/assets/users/mayur.jpeg">
+        </div>
+    </div>
+    
+    
+    <script>
+        // Define default reviews to show if no user-submitted reviews exist
+        const defaultReviews = [
+            {
+                name: "Sarah Johnson",
+                image: "/public/assets/users/mayur.jpeg",
+                title: "Exceptional Service!",
+                content: "I couldn't be happier with the service I received. The team was professional, attentive, and went above and beyond to meet my needs. Highly recommend to anyone looking for quality service.",
+                date: "March 15, 2024"
+            },
+            {
+                name: "Michael Chen",
+                image: "../../assets/users/sheetal.jpeg",
+                title: "Amazing Experience",
+                content: "Working with this team was such a pleasure. They understood my vision right away and delivered results that exceeded my expectations. I'll definitely be coming back for future projects.",
+                date: "February 28, 2024"
+            },
+            {
+                name: "Emily Rodriguez",
+                image: "../../assets/users/upasana.jpeg",
+                title: "Worth Every Penny",
+                content: "The quality of work I received was outstanding. They took the time to understand exactly what I needed and delivered a perfect result. Communication was excellent throughout the process.",
+                date: "April 2, 2024"
+            }
+        ];
+        
+        // Handle image preview
+        const imageInput = document.getElementById('reviewImage');
+        const imagePreview = document.getElementById('imagePreview');
+        
+        imageInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                }
+                
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Handle form submission
+        const reviewForm = document.getElementById('reviewForm');
+        const reviewsContainer = document.getElementById('reviewsContainer');
+        
+        // Load reviews from localStorage or use default reviews
+        function loadReviews() {
+            let reviews = [];
+            
+            // Try to get reviews from localStorage
+            const savedReviews = localStorage.getItem('customerReviews');
+            
+            if (savedReviews) {
+                // If there are saved reviews, parse them
+                reviews = JSON.parse(savedReviews);
+            } else {
+                // If no saved reviews, use default reviews and save them to localStorage
+                reviews = defaultReviews;
+                localStorage.setItem('customerReviews', JSON.stringify(reviews));
+            }
+            
+            // Clear current reviews display
+            reviewsContainer.innerHTML = '';
+            
+            // Display all reviews
+            reviews.forEach(review => {
+                displayReview(review);
+            });
+        }
+        
+        // Display a single review
+        function displayReview(review) {
+            const newReview = document.createElement('div');
+            newReview.className = 'review-card';
+            
+            newReview.innerHTML = `
+                <div class="review-header">
+                    <img src="${review.image}" alt="${review.name}" class="reviewer-img">
+                    <div class="reviewer-info">
+                        <h3>${review.name}</h3>
+                        <div class="review-date">${review.date}</div>
+                    </div>
+                </div>
+                <div class="review-title">${review.title}</div>
+                <div class="review-content">${review.content}</div>
+            `;
+            
+            // Add the new review to the beginning of the container
+            reviewsContainer.insertBefore(newReview, reviewsContainer.firstChild);
+        }
+        
+        // Handle form submission to add new review
+        reviewForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('reviewerName').value;
+            const title = document.getElementById('reviewTitle').value;
+            const content = document.getElementById('reviewContent').value;
+            const image = imagePreview.src;
+            
+            // Get current date
+            const currentDate = new Date();
+            const formattedDate = currentDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // Create new review object
+            const newReview = {
+                name: name,
+                image: image,
+                title: title,
+                content: content,
+                date: formattedDate
+            };
+            
+            // Get existing reviews from localStorage
+            let reviews = [];
+            const savedReviews = localStorage.getItem('customerReviews');
+            
+            if (savedReviews) {
+                reviews = JSON.parse(savedReviews);
+            }
+            
+            // Add new review to the beginning of the array
+            reviews.unshift(newReview);
+            
+            // Save updated reviews to localStorage
+            localStorage.setItem('customerReviews', JSON.stringify(reviews));
+            
+            // Display the new review
+            displayReview(newReview);
+            
+            // Reset the form
+            reviewForm.reset();
+            imagePreview.style.display = 'none';
+            
+            // Scroll to the new review
+            reviewsContainer.firstChild.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Load reviews when the page loads
+        window.addEventListener('DOMContentLoaded', loadReviews);
+    </script>
+</body>
+</html>
